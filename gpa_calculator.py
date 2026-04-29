@@ -36,4 +36,3 @@ print (f"Course 1: {grade1} Credits: {credit1}\n"
        f"Course 2: {grade2} Credits: {credit2}\n"
        f"Course 3: {grade3} Credits: {credit3}")
 print (f"GPA: {gpa:.2f}")
-
