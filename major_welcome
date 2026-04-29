@@ -1,4 +1,4 @@
-name = input("What is your name? ")
-major = input("What is your major? ")
-
-print("Welcome " + name + " to the " + major + " major!")
+item = "fruit"
+price = 4.50
+print(f"One {item}" 
+      f" costs ${price}")
