@@ -11,21 +11,6 @@ import requests, time
 from bs4 import BeautifulSoup
 
 def get_fuel_data (year, make, model):
-
-    """
-    Inputs:
-    - year int
-    - make str
-    - model str
-    Processes:
-     - look up car ID using fueleconomy.gov
-     - use car id to get the comb08 mpg
-    Outputs:
-    - combined mpg
-    Notes:
-        https://www.fueleconomy.gov/ws/rest/vehicle/menu/options?year=2020&make=Honda&model=Civic%204Dr
-        https://www.fueleconomy.gov/ws/rest/vehicle/42149
-    """
     
     if year < 1900 and year > 2100:
         print("Please enter a reasonable year.")
@@ -54,17 +39,7 @@ def get_fuel_data (year, make, model):
 # SCRAPING THE WEB
 
 def get_maitenance_cost(make, model):
-    """
-    I: make (str), model (str)
 
-    P: scrape data to get 10-year maitenance costs for make and model
-
-    O: 10-year cost (int)
-
-    Notes: 
-        use CarEdge.com
-        https://caredge.com/toyota/camry/maintenance
-    """
     base_url = "https://caredge.com/"
     base_headers = {"User-Agent": "Mozilla/5.0"}
 
