@@ -38,11 +38,17 @@ def get_fuel_data (year, make, model):
     data = response.json()
     vehicle_id = data["menuItem"][0]["value"]
 
+    if type(data["menuItem"]) == list:
+        vehicle_id = data["menuItem"][0]["value"]
+    else:
+        vehicle_id = data["menuItem"]["value"]
+
     # second call to grab MPG for vehicle ID
     url = base_url + f"vehicle/{vehicle_id}"
     response = requests.get(url, headers=base_headers)
     data = response.json()
 
+    print(data["comb08"])
     return data["comb08"]
 
 # SCRAPING THE WEB
@@ -92,3 +98,4 @@ for vehicle in list_of_vehicles:
         print("No MPG data.")
     print(f"{vehicle["year"]} {vehicle["make"]} {vehicle["model"]}{vehicle["extra_text"]}\nTCO: ${tco:.2f}")
     time.sleep(5)
+
